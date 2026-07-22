@@ -21,6 +21,7 @@ The work here applies traditional operational leadership principles to emerging 
 - [The Lead-and-Specialists Pattern for Codex Projects](Codex-Lead-and-Specialists-Project-Pattern.md)
 - [The Librarian Pattern for Codex Projects](Codex-Librarian-Project-Pattern.md)
 - [Build a RAG System That Knows Its Place](Authority-Aware-RAG-Codex-Project-Pattern.md)
+- [Protect the Data, Explain the Match](Higher-Education-Data-Protected-Similarity-Codex-Project-Pattern.md)
 
 ## Notes
 
