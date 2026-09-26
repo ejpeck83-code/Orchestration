@@ -1,0 +1,32 @@
+# Story research: infrastructural counterfactual mysteries
+
+Research for a collection of science-fiction mysteries about ordinary technologies that history invented differently. Each story sits on a real engineering fork between 1880 and 1960. The mystery is set in 1962-82, and the missing object is never explained.
+
+## What's here
+
+| File | What it is |
+|---|---|
+| [`01-science-corpus.md`](01-science-corpus.md) | 158 checked sources, organized as a spine for the whole series plus a section per story. Each story section has the historical fork, mechanisms the science supports, and traps to avoid |
+| [`02-originality.md`](02-originality.md) | The comparable works, how close each one sits, a risk rating per story, and pitch comparisons |
+| [`03-city.md`](03-city.md) | The setting pick (Lockport, New York), the chain from the fork to the city's growth, and 3 runners-up |
+| [`corpus.csv`](corpus.csv) | The master list of sources. Open it in a spreadsheet and filter by story |
+| [`corpus.bib`](corpus.bib) | The same list as BibTeX for Zotero or any reference manager |
+| [`tools/build_corpus.py`](tools/build_corpus.py) | Rebuilds the BibTeX and the reading lists after you edit the CSV |
+
+## The short version
+
+**Science.** Your series engine already has a name in the research: infrastructure stays invisible until it breaks (Star 1999). Most of the 10 mysteries can resolve on real science that existed inside your window, like heat pipes, tritium dating of water, sound spectrographs and record linkage. Two ideas need correcting: local Niagara stone doesn't swell in concrete, and temperature alone can't make food age radically differently.
+
+**Originality.** The collection as a whole is original. Three seeds sit close to famous works and need changing or a deliberate nod: the elevator story (*The Intuitionist*), the clerk with two impossible databases (*The City & the City*), and the station that exists only in maintenance records ("A Subway Named Möbius").
+
+**City.** Lockport, New York, population 20,876. Birdsill Holly invented district heating and reservoir-free hydrant systems there. The 1891 Niagara power commission considered pneumatic transmission 20 miles away. If that fork goes the other way, power can't travel far, industry clusters on the escarpment, and Lockport becomes the capital of district infrastructure.
+
+## Updating the corpus
+
+1. Add or edit a row in `corpus.csv`. The `section` column places it (A1-A5, B01-B10, C, D), and the `also` column cross-lists it under other stories.
+2. Run `python3 story-research/tools/build_corpus.py`.
+3. The script rewrites `corpus.bib` and the lists between the `<!-- papers:... -->` markers in `01-science-corpus.md`. Everything else in that file is left alone.
+
+## How the sources were checked
+
+Papers were verified against Crossref records for DOI, venue, volume and pages. Reports, web sources and primary documents were checked against the publisher or agency page. Books use standard catalog citations. The `verified_via` column says which check each entry got.
