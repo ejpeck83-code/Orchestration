@@ -12,6 +12,7 @@ Research for a collection of science-fiction mysteries about ordinary technologi
 | [`corpus.csv`](corpus.csv) | The master list of sources. Open it in a spreadsheet and filter by story |
 | [`corpus.bib`](corpus.bib) | The same list as BibTeX for Zotero or any reference manager |
 | [`tools/build_corpus.py`](tools/build_corpus.py) | Rebuilds the BibTeX and the reading lists after you edit the CSV |
+| [`print/premise-packet.pdf`](print/premise-packet.pdf) | A 15-page print packet. It has reading guides for the 4 short-path sources (#1, #3, #12 and #14 in the reading order) and the 3 key ideas from the other 56. Rebuild it with `print/build.sh` |
 
 ## The short version
 
