@@ -6,7 +6,7 @@ Research for a collection of science-fiction mysteries about ordinary technologi
 
 | File | What it is |
 |---|---|
-| [`01-science-corpus.md`](01-science-corpus.md) | 158 checked sources, organized as a spine for the whole series plus a section per story. Each story section has the historical fork, mechanisms the science supports, and traps to avoid |
+| [`01-science-corpus.md`](01-science-corpus.md) | 158 sources with checked citations, organized as a spine for the whole series plus a section per story. Each story section has the historical fork, mechanisms the science supports, and traps to avoid |
 | [`02-originality.md`](02-originality.md) | The comparable works, how close each one sits, a risk rating per story, and pitch comparisons |
 | [`03-city.md`](03-city.md) | The setting pick (Lockport, New York), the chain from the fork to the city's growth, and 3 runners-up |
 | [`corpus.csv`](corpus.csv) | The master list of sources. Open it in a spreadsheet and filter by story |
@@ -31,3 +31,5 @@ Research for a collection of science-fiction mysteries about ordinary technologi
 ## How the sources were checked
 
 Papers were verified against Crossref records for DOI, venue, volume and pages. Reports, web sources and primary documents were checked against the publisher or agency page. Books use standard catalog citations. The `verified_via` column says which check each entry got.
+
+Those checks confirm that each source exists and is cited correctly. The notes are a separate matter. Only 1 source (Bottomley 2014) was read in full, and the notes on the rest come from Claude's knowledge of the work plus its abstract or record. Read the paper itself before a story depends on it.

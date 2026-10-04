@@ -4,6 +4,8 @@
 
 I checked every paper against Crossref or the publisher's record before it went in. 111 entries carry a verified DOI. Several DOIs and page ranges I had from memory turned out wrong, and the corrected versions are what you see here.
 
+That check covers the citation. The notes come from what I know about each work plus its abstract, and I read only 1 in full (Bottomley 2014). Confirm a note against the paper before a story leans on it.
+
 ## Start here
 
 Three findings shape everything below.
