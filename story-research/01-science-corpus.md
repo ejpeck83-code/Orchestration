@@ -14,7 +14,7 @@ Three findings shape everything below.
 
 **Most of your mysteries can resolve on real, period-accurate science.** The heat pipe (1964), tritium dating of water (1957), the sound spectrograph (1946) and probabilistic record linkage (1959 and 1969) all existed inside your 1962-82 window. Part C lists what your investigators could and couldn't do.
 
-**Two plot ideas need correcting before you build on them.** Local Niagara Escarpment dolostone doesn't swell in concrete, so a "the stone itself grew" solution needs imported aggregate. And temperature alone can't make food age *radically* differently. Ethylene or storage atmosphere can.
+**Some plot ideas need care before you build on them.** [`04-facts-to-check.md`](04-facts-to-check.md) lists the 36 facts the stories lean on, how sure I am about each, and the cheapest way to check it. Two examples: local Niagara Escarpment dolostone probably doesn't swell in concrete, so a "the stone itself grew" solution likely needs imported aggregate. And a cold room that drifts a few degrees can speed up microbial spoilage several times over, which is more than this doc first said.
 
 ## How to use this
 
@@ -151,7 +151,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 
 - **Weaving and wrong-way conflicts.** Grade separation removes crossing conflicts and creates merging and weaving ones, which is where interchange crashes cluster (Pulugurtha & Bhatt 2010). Wrong-way entries through ramps put cars on paths they should never be on (NTSB 2012). Roads that never cross still share space in a weave.
 - **Structures that move.** Frost heave, freeze-thaw damage and alkali-aggregate expansion change clearances and elevations over decades (Taber 1930; Powers 1945; Stanton 1940; Gillott 1964).
-- **Records that disagree.** Drawings tied to different survey datums can disagree even when every survey was done right (Dewhurst 1990; Snay 2012). Your "mismatched elevations" can be a datum problem before anyone suspects a crime.
+- **Records that disagree.** Drawings tied to different datums can disagree even when every survey was done right. For elevations, the datums that matter are vertical: NGVD 29 and local ones, like the New York State Barge Canal's own datum. Dewhurst 1990 and Snay 2012 cover map coordinates. Your "mismatched elevations" can be a datum problem before anyone suspects a crime.
 - **Shock waves.** Traffic disturbances travel backward and can put collisions at a fixed spot far from their cause (Lighthill & Whitham 1955; Richards 1956).
 
 **Watch out for**
@@ -212,7 +212,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 **Mechanisms the papers support**
 
 - **The null sink.** Blank or failed coordinates collapse to (0, 0), and data systems start treating that point as a real place (Juhász & Mooney 2022). In a 1970s coordinate city, the grid origin collects mail that belongs nowhere.
-- **Datum change.** Re-basing a coordinate system moves every old coordinate slightly (Dewhurst 1990; Snay 2012). A few land in the river, the gorge or the escarpment face.
+- **Datum change.** Re-basing a coordinate system moves every old coordinate. NAD 83 moved positions by roughly 10 to 100 meters across the US, and it arrived in 1986, after your window, so a re-basing in 1962-82 has to be the city's own (Dewhurst 1990; Snay 2012). A few points land in the river, the gorge or the escarpment face.
 - **Matching errors.** Street-based matching can put an address tens of meters off (Zandbergen 2008), and probabilistic record linkage can merge two people or invent one (Fellegi & Sunter 1969).
 
 **Watch out for**
@@ -238,7 +238,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 - **Juhász & Mooney (2022).** 'I Think I Discovered a Military Base in the Middle of the Ocean': Null Island, the Most Real of Fictional Places. *IEEE Access* 10:84147-84165. [doi:10.1109/ACCESS.2022.3197222](https://doi.org/10.1109/ACCESS.2022.3197222)  
   How blank or broken coordinates collapse to (0, 0) and turn into a real-seeming place in data. A direct model for mail from a coordinate that cannot exist.
 - **Dewhurst (1990).** NADCON: The Application of Minimum-Curvature-Derived Surfaces in the Transformation of Positional Data from the North American Datum of 1927 to the North American Datum of 1983 (NOAA Technical Memorandum NOS NGS-50). *NOAA National Geodetic Survey*. [link](https://www.ngs.noaa.gov/PUBS_LIB/NGS50.pdf)  
-  The NGS method for converting NAD 27 coordinates to NAD 83. When a datum changes, every old coordinate lands somewhere slightly new.
+  The NGS method for converting NAD 27 coordinates to NAD 83. NAD 83 arrived in 1986, after the story window, and moved positions by roughly 10 to 100 meters. It covers map coordinates, not elevations.
 - **Snay (2012).** Evolution of NAD 83 in the United States: Journey from 2D toward 4D. *Journal of Surveying Engineering* 138(4):161-171. [doi:10.1061/(ASCE)SU.1943-5428.0000083](https://doi.org/10.1061/(ASCE)SU.1943-5428.0000083)  
   How the NAD 83 datum itself was revised several times. Supports a city whose coordinates quietly move under it.
 
@@ -295,7 +295,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 
 **Watch out for**
 
-- Temperature alone gives you "faster." For "radically different," use ethylene or atmosphere.
+- Temperature matters more for spoilage than for ripening. Chemical quality loss speeds up about 2 to 3 times per 10 degrees C, and microbial spoilage near fridge temperatures often speeds up 4 to 10 times (Ratkowsky et al. 1982). Ethylene and atmosphere are still the levers for ripening.
 - Brine and ammonia loops carry cold through pipes. Ethylene moves through air, so the mechanism needs shared rooms or shared ventilation.
 
 **Papers**
@@ -318,7 +318,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 - **Baranyi & Roberts (1994).** A Dynamic Approach to Predicting Bacterial Growth in Food. *International Journal of Food Microbiology* 23(3-4):277-294. [doi:10.1016/0168-1605(94)90157-0](https://doi.org/10.1016/0168-1605(94)90157-0)  
   How to model bacterial growth when temperature changes over time, as it would in a drifting district loop.
 - **Labuza (1984).** Application of Chemical Kinetics to Deterioration of Foods. *Journal of Chemical Education* 61(4):348. [doi:10.1021/ed061p348](https://doi.org/10.1021/ed061p348)  
-  Arrhenius and Q10 kinetics for food deterioration. Rule of thumb: a 10 degree C rise often speeds these reactions 2 to 3 times, so 'radically different rates' needs more than temperature alone.
+  Arrhenius and Q10 kinetics for chemical food deterioration. Rule of thumb: a 10 degree C rise often speeds these reactions 2 to 3 times. Microbial spoilage near fridge temperatures can speed up more (see Ratkowsky et al. 1982).
 - **Diehl (2002).** Food Irradiation: Past, Present and Future. *Radiation Physics and Chemistry* 63(3-6):211-215. [doi:10.1016/S0969-806X(01)00622-3](https://doi.org/10.1016/S0969-806X(01)00622-3)  
   History of food irradiation, including the 1950s-60s programs. A darker way food could age slowly in one area.
 - **Anderson (1953).** Refrigeration in America: A History of a New Technology and Its Impact. *Princeton University Press* (book).  
@@ -388,7 +388,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 **The fork in our history**
 
 - The parking meter arrived in Oklahoma City on July 16, 1935: 175 meters on 14 blocks, with timing parts from a Tulsa firm that made timers for nitroglycerin oil-well shots (Oklahoma Historical Society).
-- Mechanical parking already existed. Kent Automatic Garages ran in several US cities from 1929 to the early 1960s, and the 25-story Manhattan one held about 1,000 cars (New York Times 2014).
+- Mechanical parking already existed. The 25-story Kent Automatic Garage in Manhattan, opened in 1929-30, held about 1,000 cars moved by electric "parkers" and ran as a garage until 1943 (New York Times 2014).
 - Los Angeles required off-street parking in 1935. By 1969, 96% of US cities over 25,000 did (Garber et al. 2024). That's the policy your world skips.
 
 **Mechanisms the papers support**
@@ -406,7 +406,7 @@ Each story gets four things: the historical fork, mechanisms the papers make def
 - **Oklahoma Historical Society (n.d.).** Parking Meter (Encyclopedia of Oklahoma History and Culture, entry PA015). *Oklahoma Historical Society*. [link](https://www.okhistory.org/publications/enc/entry?entry=PA015)  
   The first parking meter: Oklahoma City, July 16, 1935, with 175 meters on fourteen blocks. The mechanism came from a Tulsa firm that made timers for nitroglycerin oil-well shots.
 - **New York Times (2014).** In 1929, an Automatic High-Rise Parking Garage. *New York Times, Nov. 9, 2014*. [link](https://www.nytimes.com/2014/11/09/realestate/in-1929-an-automatic-high-rise-parking-garage.html)  
-  Kent Automatic Garages, 1929 to the early 1960s. The 25-story garage at 43 West 61st Street held about 1,000 cars moved by an electric 'parker' that hooked the rear axle. A working ancestor of your parking vaults.
+  The 25-story Kent Automatic Garage at 43 West 61st Street, opened in 1929-30, held about 1,000 cars moved by an electric 'parker' that hooked the rear axle. It ran as a garage until 1943. A working ancestor of your parking vaults.
 - **Garber et al. (2024).** Parking and Public Health. *Current Environmental Health Reports*. [doi:10.1007/s40572-024-00465-4](https://doi.org/10.1007/s40572-024-00465-4)  
   Parking's health effects plus a compact history: Los Angeles required off-street parking in 1935, 12% of cities zoned for parking by 1946, and 96% of cities over 25,000 did by 1969.
 - **Shoup (1999).** The Trouble with Minimum Parking Requirements. *Transportation Research Part A: Policy and Practice* 33(7-8):549-574. [doi:10.1016/S0965-8564(99)00007-5](https://doi.org/10.1016/S0965-8564(99)00007-5)  

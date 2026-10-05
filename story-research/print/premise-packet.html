@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>The premise in 4 readings</title>
+<title>Two readings and a fact check</title>
 <style>
 @font-face { font-family: "Public Sans"; font-weight: 400; src: url(fonts/PublicSans-400.ttf); }
 @font-face { font-family: "Public Sans"; font-weight: 600; src: url(fonts/PublicSans-600.ttf); }
@@ -25,7 +25,7 @@
 @page {
   size: Letter;
   margin: 0.75in 0.85in 0.8in;
-  @bottom-left { content: "The premise in 4 readings"; font-family: "Public Sans", sans-serif; font-size: 7.5pt; color: #8a867c; }
+  @bottom-left { content: "Two readings and a fact check"; font-family: "Public Sans", sans-serif; font-size: 7.5pt; color: #8a867c; }
   @bottom-right { content: counter(page) " of " counter(pages); font-family: "Public Sans", sans-serif; font-size: 7.5pt; color: #8a867c; }
 }
 @page :first {
@@ -64,20 +64,22 @@ h3 { font-family: var(--sans); font-weight: 700; font-size: 9.5pt; margin: 13pt 
 .howto ul { margin: 0; padding-left: 14pt; }
 .howto li { margin: 0 0 6pt; }
 
-/* Map page */
-.layers { margin: 12pt 0 24pt; border-top: 1.5pt solid var(--ink); }
-.layer { display: grid; grid-template-columns: 0.42in 1fr 2.65in; gap: 0 12pt; padding: 10pt 0; border-bottom: 0.75pt solid var(--rule); break-inside: avoid; }
-.layer .ln { font-family: var(--sans); font-weight: 700; font-size: 22pt; line-height: 1; color: var(--accent); }
-.layer h4 { font-family: var(--sans); font-weight: 700; font-size: 10.5pt; margin: 0 0 2pt; }
-.layer p { margin: 0; font-size: 9.8pt; color: var(--muted); }
-.layer .wk { font-family: var(--sans); font-size: 8.6pt; line-height: 1.5; }
-.layer .wk div { margin-bottom: 2pt; }
-.layer .wk b { font-weight: 700; color: var(--accent); }
-table.week { width: 100%; border-collapse: collapse; font-size: 9.8pt; }
+/* Before-you-start page */
+table.week { width: 100%; border-collapse: collapse; font-size: 9.8pt; margin-top: 8pt; }
 table.week th { font-family: var(--sans); font-size: 7.6pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 8pt 5pt 0; border-bottom: 1.5pt solid var(--ink); }
 table.week td { padding: 6pt 8pt 6pt 0; border-bottom: 0.75pt solid var(--rule); vertical-align: top; }
 table.week td.d { font-family: var(--sans); font-weight: 600; font-size: 9pt; white-space: nowrap; }
-table.week td.len { color: var(--muted); white-space: nowrap; }
+table.week td.len { color: var(--muted); }
+ul.legend { list-style: none; margin: 0; padding: 0; }
+ul.legend li { display: grid; grid-template-columns: 0.7in 1fr; gap: 0 8pt; align-items: baseline; margin: 0 0 5pt; font-size: 9.8pt; }
+ul.plist { list-style: none; margin: 0; padding: 0; border-top: 0.75pt solid var(--rule); }
+ul.plist li { padding: 4.5pt 0; border-bottom: 0.75pt solid var(--rule); font-size: 10pt; }
+.fid { font-family: var(--sans); font-weight: 700; font-size: 8.6pt; color: var(--accent); display: inline-block; min-width: 0.34in; }
+.conf { font-family: var(--sans); font-size: 6.8pt; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; padding: 0.5pt 4pt; border: 0.75pt solid currentColor; border-radius: 2pt; vertical-align: 1pt; white-space: nowrap; }
+.conf-high .conf, .conf.conf-high { color: #2e5a4c; }
+.conf-medium .conf, .conf.conf-medium { color: #9a5b12; }
+.conf-low .conf, .conf.conf-low { color: #a2342b; }
+.byline { font-family: var(--sans); font-size: 8.5pt; color: var(--faint); margin: -16pt 0 26pt; }
 
 /* Guide pages */
 dl.meta { display: grid; grid-template-columns: 0.8in 1fr; gap: 5pt 12pt; margin: 0 0 4pt; padding: 10pt 12pt; background: var(--tint); font-size: 9.4pt; line-height: 1.38; }
@@ -100,35 +102,24 @@ ol.qs > li::before { content: counter(q); position: absolute; left: 0; top: 0; f
 ol.qs > li p { margin: 0 0 2pt; }
 .lines span { display: block; height: 0.28in; border-bottom: 0.6pt solid var(--rule); }
 
-/* Idea pages */
-.lede { font-size: 12.5pt; line-height: 1.4; margin: 6pt 0 12pt; color: var(--ink); }
-.ideas-intro { font-size: 11pt; color: var(--muted); max-width: 6.2in; margin-bottom: 20pt; }
-.idea { font-size: 10pt; line-height: 1.42; }
-.idea .lede { font-size: 12pt; margin: 4pt 0 10pt; }
-.glance { border-top: 1.5pt solid var(--ink); margin-top: 6pt; }
-.card { display: grid; grid-template-columns: 0.55in 1fr; gap: 0 12pt; padding: 14pt 0 10pt; border-bottom: 0.75pt solid var(--rule); break-inside: avoid; }
-.card .cn { font-family: var(--sans); font-weight: 700; font-size: 34pt; line-height: 0.9; color: var(--accent); }
-.card h4 { font-family: var(--sans); font-weight: 700; font-size: 15pt; line-height: 1.15; margin: 0 0 5pt; }
-.card p { margin: 0 0 6pt; }
-.card .rule { font-family: var(--sans); font-size: 9pt; font-weight: 600; }
-.card .rule span { font-size: 7.4pt; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-right: 6pt; }
-.boxes { display: grid; grid-template-columns: 1fr 1fr; gap: 0 14pt; margin: 10pt 0 8pt; break-inside: avoid; }
-.boxes > div { background: var(--tint); padding: 9pt 12pt 4pt; font-size: 9.6pt; line-height: 1.4; }
-.boxes h3 { margin-top: 0; }
-.boxes .rule-name { font-family: var(--sans); font-weight: 700; color: var(--accent); }
-.sources { font-family: var(--sans); font-size: 7.6pt; line-height: 1.55; color: var(--muted); border-top: 0.75pt solid var(--rule); padding-top: 6pt; margin-top: 6pt; }
-.sources b { color: var(--ink); font-weight: 600; }
-table.drift { width: 100%; border-collapse: collapse; font-size: 9pt; line-height: 1.3; margin: 2pt 0 10pt; break-inside: avoid; }
-table.drift th { font-family: var(--sans); font-size: 7.4pt; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); text-align: left; padding: 0 10pt 4pt 0; border-bottom: 1.5pt solid var(--ink); }
-table.drift td { padding: 2.5pt 10pt 2.5pt 0; border-bottom: 0.6pt solid var(--rule); vertical-align: top; }
-table.drift td.num { font-family: var(--sans); font-size: 8.2pt; color: var(--accent); font-weight: 600; white-space: nowrap; padding-right: 0; }
+/* Facts pages */
+.facts-intro { color: var(--muted); margin-bottom: 2pt; }
+h3.fsec { font-size: 10.5pt; margin: 14pt 0 0; padding-bottom: 3pt; border-bottom: 1.5pt solid var(--ink); break-after: avoid; }
+.fact { display: grid; grid-template-columns: 0.22in 1fr; gap: 0 8pt; padding: 7pt 0 6pt; border-bottom: 0.6pt solid var(--rule); break-inside: avoid; }
+.fact .tick { width: 9pt; height: 9pt; border: 1pt solid var(--ink); margin-top: 2pt; }
+.fact .ft { font-family: var(--sans); font-weight: 700; font-size: 9.8pt; line-height: 1.3; margin: 0 0 2pt; }
+.fact .ft .conf, .fact .ft .fix { margin-left: 5pt; }
+.fact .fd { font-size: 9.8pt; line-height: 1.4; margin: 0 0 3pt; }
+.fact .fm { font-family: var(--sans); font-size: 7.9pt; line-height: 1.45; color: var(--muted); margin: 0 0 1.5pt; }
+.fact .fm b { color: var(--ink); font-weight: 600; }
+.fact .url { color: var(--faint); }
+.fix { font-family: var(--sans); font-size: 6.8pt; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: #fff; background: var(--ink); padding: 1pt 4pt; border-radius: 2pt; vertical-align: 1pt; }
 
-/* Closing page */
-ol.spine { list-style: none; counter-reset: s; margin: 10pt 0 16pt; padding: 0; border-top: 1.5pt solid var(--ink); }
-ol.spine li { counter-increment: s; display: grid; grid-template-columns: 0.35in 1.05in 1fr; gap: 0 8pt; padding: 8pt 0; border-bottom: 0.75pt solid var(--rule); }
-ol.spine li::before { content: counter(s); font-family: var(--sans); font-weight: 700; font-size: 13pt; color: var(--accent); line-height: 1.2; }
-ol.spine .lbl { font-family: var(--sans); font-weight: 700; font-size: 10pt; }
+/* Library page */
 .cites p { font-size: 9.4pt; line-height: 1.4; padding-left: 14pt; text-indent: -14pt; margin-bottom: 6pt; }
+.cites .for { font-family: var(--sans); font-size: 7.8pt; font-weight: 600; color: var(--accent); }
+.sources { font-family: var(--sans); font-size: 7.6pt; line-height: 1.55; color: var(--muted); border-top: 0.75pt solid var(--rule); padding-top: 6pt; margin-top: 10pt; }
+.sources b { color: var(--ink); font-weight: 600; }
 </style>
 </head>
 <body>
@@ -136,67 +127,65 @@ ol.spine .lbl { font-family: var(--sans); font-weight: 700; font-size: 10pt; }
 <!-- 1. Cover -->
 <section class="page cover">
   <p class="kicker">Reading packet · week of October 5, 2026</p>
-  <h1>The premise in<br>4 readings</h1>
-  <p class="dek">The short path through the 60-source reading order for your infrastructural counterfactual mysteries: #1, #3, #12 and #14. Then the 3 key ideas the other 56 add up to.</p>
+  <h1>Two readings<br>and a fact check</h1>
+  <p class="dek">Star and David from the short path, then the 36 facts your stories lean on, each with how sure I am and the cheapest way to check it. Pierce and Jia &amp; Crabtree wait for the library.</p>
+  <p class="byline">Prepared by Claude · October 5, 2026</p>
 
   <div class="contents">
     <div class="row"><span class="n">1</span><span class="what">The engine</span><span class="src">Star (1999), <cite>The Ethnography of Infrastructure</cite></span><span class="pg">p. 3</span></div>
     <div class="row"><span class="n">2</span><span class="what">The thesis</span><span class="src">David (1985), <cite>Clio and the Economics of QWERTY</cite></span><span class="pg">p. 5</span></div>
-    <div class="row"><span class="n">3</span><span class="what">The city</span><span class="src">Pierce (1995), <cite>The Road to Lockport</cite></span><span class="pg">p. 7</span></div>
-    <div class="row"><span class="n">4</span><span class="what">The power fork</span><span class="src">Jia &amp; Crabtree (2015), <cite>The International Niagara Commission of 1891</cite></span><span class="pg">p. 9</span></div>
-    <div class="row"><span class="n">5</span><span class="what">The other 56</span><span class="src">The 3 key ideas from the rest of the reading order</span><span class="pg">p. 11</span></div>
+    <div class="row"><span class="n">3</span><span class="what">Facts to check</span><span class="src">36 facts, grouped by story, with how sure I am about each</span><span class="pg">p. 7</span></div>
+    <div class="row"><span class="n">4</span><span class="what">For the library</span><span class="src">Citations for the held readings and the shakiest facts</span><span class="pg">p. 15</span></div>
   </div>
 
   <div class="howto">
     <h3>How to use it</h3>
     <ul>
-      <li>One reading a day, Monday to Thursday. Friday is the 3 ideas.</li>
+      <li>Monday, Star. Tuesday, David. Wednesday to Friday, the facts, starting with the 6 I’m least sure of.</li>
       <li>Read each guide page first, then the paper, then work the questions on the back of the guide.</li>
-      <li>The papers aren’t printed here. All 4 sit behind paywalls (SAGE, JSTOR, ASHRAE and Cambridge), so each guide says how to get yours. Print it and slot it behind its guide.</li>
-      <li>The guide summaries come from Claude’s knowledge of each paper and its abstract. Claude hasn’t read these 4 in full, so where a guide and the paper disagree, trust the paper.</li>
+      <li>The papers aren’t printed here. Both sit behind paywalls (SAGE and JSTOR), so each guide says how to get yours.</li>
+      <li>The guide summaries come from my knowledge of each paper and its abstract. I haven’t read either in full, so where a guide and the paper disagree, trust the paper.</li>
       <li>Print double-sided and each reading becomes one sheet.</li>
     </ul>
   </div>
 </section>
 
-<!-- 2. Map -->
+<!-- 2. Before you start -->
 <section class="page">
   <p class="kicker">Before you start</p>
-  <h2>How this week fits your engine</h2>
-  <p>Your engine has 4 layers. Each reading and each idea in this packet feeds one of them.</p>
-
-  <div class="layers">
-    <div class="layer">
-      <div class="ln">1</div>
-      <div><h4>The ordinary thing</h4><p>Traffic light, street address, elevator, refrigerator, telephone number, parking meter, house key, fire hydrant, crossing gate, thermostat.</p></div>
-      <div class="wk"><div>The 10 items themselves</div></div>
-    </div>
-    <div class="layer">
-      <div class="ln">2</div>
-      <div><h4>The fork, 1880-1960</h4><p>A real decision that could have gone the other way.</p></div>
-      <div class="wk"><div><b>Reading 4</b> · the Niagara Commission</div><div><b>Idea 1</b> · The losing design worked</div></div>
-    </div>
-    <div class="layer">
-      <div class="ln">3</div>
-      <div><h4>The accumulated world, 1962-82</h4><p>The fork, built in and forgotten.</p></div>
-      <div class="wk"><div><b>Reading 2</b> · lock-in</div><div><b>Reading 3</b> · Lockport</div><div><b>Idea 2</b> · The fork sinks into the walls</div></div>
-    </div>
-    <div class="layer">
-      <div class="ln">4</div>
-      <div><h4>The mystery</h4><p>A breakdown that makes the system visible.</p></div>
-      <div class="wk"><div><b>Reading 1</b> · the engine</div><div><b>Idea 3</b> · The record and the machine drift apart</div></div>
-    </div>
-  </div>
-
-  <h3>The week</h3>
+  <h2>How this week works</h2>
   <table class="week">
-    <tr><th>Day</th><th>Read</th><th>Reading order</th><th>Length</th></tr>
-    <tr><td class="d">Mon, Oct 5</td><td>Star (1999), <cite>The Ethnography of Infrastructure</cite></td><td>#1</td><td class="len">15 pages</td></tr>
-    <tr><td class="d">Tue, Oct 6</td><td>David (1985), <cite>Clio and the Economics of QWERTY</cite></td><td>#3</td><td class="len">6 pages</td></tr>
-    <tr><td class="d">Wed, Oct 7</td><td>Pierce (1995), <cite>The Road to Lockport</cite></td><td>#12</td><td class="len">Conference paper</td></tr>
-    <tr><td class="d">Thu, Oct 8</td><td>Jia &amp; Crabtree (2015), <cite>The International Niagara Commission of 1891</cite></td><td>#14</td><td class="len">16 pages</td></tr>
-    <tr><td class="d">Fri, Oct 9</td><td>The 3 key ideas from the other 56, in this packet</td><td>The rest</td><td class="len">5 pages</td></tr>
+    <tr><th>When</th><th>Do</th><th>Size</th></tr>
+    <tr><td class="d">Mon, Oct 5</td><td>Read Star (1999), <cite>The Ethnography of Infrastructure</cite>. Reading order #1.</td><td class="len">15 pages</td></tr>
+    <tr><td class="d">Tue, Oct 6</td><td>Read David (1985), <cite>Clio and the Economics of QWERTY</cite>. Reading order #3.</td><td class="len">6 pages</td></tr>
+    <tr><td class="d">Wed to Fri</td><td>Check the facts, starting with the ones below.</td><td class="len">36 facts; most take a few minutes</td></tr>
+    <tr><td class="d">Any day</td><td>Request Pierce (1995) and Jia &amp; Crabtree (2015) from the library. Their guide sheets are saved for when the papers arrive.</td><td class="len">Citations on p. 15</td></tr>
   </table>
+
+  <h3>How sure I am</h3>
+  <ul class="legend">
+    <li><span class="conf conf-high">High</span><span>Widely documented. Most were also confirmed by a web search on October 5.</span></li>
+    <li><span class="conf conf-medium">Medium</span><span>I believe it, but a detail could be off, or I couldn’t confirm the key part.</span></li>
+    <li><span class="conf conf-low">Low</span><span>Plausible on paper, and I know of no documented case.</span></li>
+  </ul>
+<!-- facts-priority:start -->
+  <h3>Start with these 6</h3>
+  <ul class="plist">
+    <li><span class="fid">I3</span>Local Niagara stone probably doesn’t swell in concrete <span class="conf conf-medium">Medium</span></li>
+    <li><span class="fid">I4</span>Elevations ran on more than one datum <span class="conf conf-medium">Medium</span></li>
+    <li><span class="fid">R3</span>Temperature can do more than I first said <span class="conf conf-medium">Medium</span></li>
+    <li><span class="fid">M3</span>Automated storage moves cars on its own <span class="conf conf-medium">Medium</span></li>
+    <li><span class="fid">K3</span>A pressure surge could flip a fluidic latch <span class="conf conf-low">Low</span></li>
+    <li><span class="fid">D2</span>A melting mass can pin a room’s temperature <span class="conf conf-medium">Medium</span></li>
+  </ul>
+  <h3>4 corrections I made while checking</h3>
+  <ul class="plist">
+    <li><span class="fid">I4</span>Elevations ran on more than one datum</li>
+    <li><span class="fid">N3</span>NAD 83 arrived after your window</li>
+    <li><span class="fid">R3</span>Temperature can do more than I first said</li>
+    <li><span class="fid">M2</span>Robot parking ran in Manhattan from 1929</li>
+  </ul>
+<!-- facts-priority:end -->
 </section>
 
 <!-- 3. Reading 1 -->
@@ -292,7 +281,413 @@ ol.spine .lbl { font-family: var(--sans); font-weight: 700; font-size: 10pt; }
   <div class="lines" data-n="4"></div>
 </section>
 
-<!-- 5. Reading 3 -->
+<!-- 3. Facts to check (generated by tools/build_facts.py) -->
+<!-- facts:start -->
+<section class="page facts">
+  <p class="kicker">Wednesday to Friday</p>
+  <h2>Facts to check</h2>
+  <p class="facts-intro">The 36 facts your stories lean on, grouped by story. Tick the box when you’ve checked one. The links are clickable in <b>story-research/04-facts-to-check.md</b>.</p>
+  <h3 class="fsec">The city: Lockport</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">C1</span>Holly’s district heating started in Lockport <span class="conf">High</span></p>
+      <p class="fd">Birdsill Holly installed the first successful commercial district heating system in Lockport in 1877, and more than 50 were running by 1890.</p>
+      <p class="fm"><b>How sure:</b> Pierce’s abstract says so, and a search on Oct. 5 agreed. While you’re in the paper, check what it says about early district cooling, which Cold Room borrows.</p>
+      <p class="fm"><b>Check first:</b> Pierce 1995 abstract (OSTI) <span class="url">osti.gov/biblio/87450</span> · Birdsill Holly (National Inventors Hall of Fame) <span class="url">invent.org/inductees/birdsill-holly-jr</span>. <b>Then:</b> Pierce 1995 (#12).</p>
+      <p class="fm"><b>If it’s wrong:</b> The setting loses its origin story.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">C2</span>The Niagara Commission rejected every plan, pneumatic ones included <span class="conf">High</span></p>
+      <p class="fd">In 1890-91 the International Niagara Commission, headed by Lord Kelvin, reviewed schemes ranging from pneumatic pressure to ropes, springs and pulleys, plus direct current. It rejected them all, and Westinghouse won the alternating-current contract in late 1893.</p>
+      <p class="fm"><b>How sure:</b> PBS says this almost word for word, and a search on Oct. 5 agreed.</p>
+      <p class="fm"><b>Check first:</b> Tesla and Niagara (PBS) <span class="url">pbs.org/tesla/ll/ll_niagara.html</span>. <b>Then:</b> Jia &amp; Crabtree 2015 (#14); Lubar 1989 (#15).</p>
+      <p class="fm"><b>If it’s wrong:</b> Your power fork needs a different decision point.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">C3</span>City-scale water and air power worked <span class="conf">High</span></p>
+      <p class="fd">London Hydraulic Power, founded in 1883, ran about 180 miles of 800 psi water mains until its last pump house closed in 1977, driving lifts, cranes and theater stages. Paris pushed compressed air through street mains, first to run its clocks.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on London’s numbers. The Paris clocks are in an 1882 magazine article.</p>
+      <p class="fm"><b>Check first:</b> London Hydraulic Power Company (Wikipedia) <span class="url">en.wikipedia.org/…</span> · Time-Keeping in Paris, 1882 (Wikisource) <span class="url">en.wikisource.org/…</span>. <b>Then:</b> Popular Science Monthly 1882 (#22).</p>
+      <p class="fm"><b>If it’s wrong:</b> The whole world gets harder to believe.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">C4</span>Falling water can make compressed air <span class="conf">High</span></p>
+      <p class="fd">Charles Taylor’s hydraulic air compressor at Ragged Chutes, on the Montreal River near Cobalt, Ontario, opened in 1910 and fed compressed air to mines for about 70 years, with almost no moving parts.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on 1910, the place and the inventor. The 70-year run comes from secondary sources, so treat it as approximate.</p>
+      <p class="fm"><b>Check first:</b> Trompe (Wikipedia) <span class="url">en.wikipedia.org/wiki/Trompe</span> · The Hydraulic Air Compressor: An Old Idea Made New <span class="url">airbestpractices.com/…</span>. <b>Then:</b> Millar 2014 (#16).</p>
+      <p class="fm"><b>If it’s wrong:</b> Lockport’s compressor halls need a different machine.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">C5</span>Love’s Model City became Love Canal <span class="conf">High</span></p>
+      <p class="fd">William T. Love proposed a power-canal city in 1893, broke ground in 1894, dug about a mile and lost his investors by 1897. The unfinished ditch became Love Canal.</p>
+      <p class="fm"><b>How sure:</b> Well documented locally. Love Canal has living victims, so handle the mirror with care.</p>
+      <p class="fm"><b>Check first:</b> Model City (Discover Niagara) <span class="url">discoverniagara.org/model-city-pre-wwii</span> · The dream and demise of Model City (Lockport Union-Sun &amp; Journal) <span class="url">lockportjournal.com/…</span>. <b>Then:</b> Newman 2016 (#17).</p>
+      <p class="fm"><b>If it’s wrong:</b> The mirror you never explain stops working.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Intersection (traffic light)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">I1</span>London’s first traffic signal blew up <span class="conf">High</span></p>
+      <p class="fd">London put the first traffic signal outside Parliament on December 9, 1868. A gas leak blew it up on January 2, 1869, burning the policeman who ran it, and London’s next signal was an electric one in 1926.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on all 3 dates.</p>
+      <p class="fm"><b>Check first:</b> First traffic lights (Smithsonian) <span class="url">smithsonianmag.com/…</span>. <b>Then:</b> McShane 1999 (#34).</p>
+      <p class="fm"><b>If it’s wrong:</b> You lose a real freak-accident fork.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">I2</span>Separated roads still collide in the weave <span class="conf">High</span></p>
+      <p class="fd">Grade separation removes crossing conflicts and adds merges and weaves near ramps, which is where interchange crashes concentrate.</p>
+      <p class="fm"><b>How sure:</b> A standard traffic-safety finding, with a free FHWA report behind it.</p>
+      <p class="fm"><b>Check first:</b> Safety Performance for Freeway Weaving Segments (FHWA) <span class="url">rosap.ntl.bts.gov/view/dot/28221</span>. <b>Then:</b> Pulugurtha &amp; Bhatt 2010 (#35).</p>
+      <p class="fm"><b>If it’s wrong:</b> Roads that never cross can’t hit each other, and the story needs a new mechanism.</p>
+    </div>
+  </div>
+  <div class="fact conf-medium">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">I3</span>Local Niagara stone probably doesn’t swell in concrete <span class="conf">Medium</span></p>
+      <p class="fd">Quarried Niagara Escarpment dolostone isn’t alkali-reactive, so concrete that grows needs imported stone. The classic swelling rock comes from Kingston, Ontario, where the alkali-carbonate reaction was identified in 1957.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 confirmed the Kingston history and that the escarpment’s Amabel dolostone is a major Ontario concrete aggregate. I couldn’t confirm the non-reactive claim itself.</p>
+      <p class="fm"><b>Check first:</b> 15 Years of Living at Kingston with a Reactive Carbonate Rock (TRB, 1974) <span class="url">onlinepubs.trb.org/…</span>. <b>Then:</b> Rogers et al. 2000 (#37).</p>
+      <p class="fm"><b>If it’s wrong:</b> If local stone can swell, you lose the imported-stone clue.</p>
+    </div>
+  </div>
+  <div class="fact conf-medium">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">I4</span>Elevations ran on more than one datum <span class="conf">Medium</span> <span class="fix">corrected</span></p>
+      <p class="fd">Before NAVD 88, US elevations used NGVD 29, and some cities and the New York State Barge Canal kept their own vertical datums. Two correct drawings on different datums can disagree by a foot or more.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 confirmed NGVD 29, local city datums like Chicago’s, and that USGS lists a separate Barge Canal datum. I don’t know the Barge Canal’s offset. The corpus’s datum papers cover map coordinates, which is the wrong kind of datum for elevations.</p>
+      <p class="fm"><b>Check first:</b> USGS vertical datum codes, which list BARGECANAL <span class="url">help.waterdata.usgs.gov/…</span> · NGVD 29 (Wikipedia) <span class="url">en.wikipedia.org/…</span>. <b>Then:</b> The NY Canal Corporation or a local surveyor, for the Barge Canal offset.</p>
+      <p class="fm"><b>If it’s wrong:</b> The mismatched elevations need a different cause.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Number (street address)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">N1</span>Broken coordinates pile up at (0, 0) <span class="conf">High</span></p>
+      <p class="fd">Blank or failed coordinates collapse to (0, 0), and data systems start treating that point as a real place. GIS people call it Null Island.</p>
+      <p class="fm"><b>How sure:</b> Well documented in modern GIS, and the paper is open access. A 1970s version is your world’s design.</p>
+      <p class="fm"><b>Check first:</b> Juhász &amp; Mooney 2022 (IEEE Access, free) <span class="url">doi.org/10.1109/ACCESS.2022.3197222</span>. <b>Then:</b> Same paper (#40).</p>
+      <p class="fm"><b>If it’s wrong:</b> Your grid origin can’t collect stray mail.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">N2</span>Record matching could merge or invent people by 1959 <span class="conf">High</span></p>
+      <p class="fd">Probabilistic record linkage ran on computers by 1959 and got its formal theory in 1969. False matches can merge 2 people into 1 or create a person who never existed.</p>
+      <p class="fm"><b>How sure:</b> Both papers are classics, and a free overview covers the method.</p>
+      <p class="fm"><b>Check first:</b> Record linkage (Wikipedia) <span class="url">en.wikipedia.org/wiki/Record_linkage</span>. <b>Then:</b> Fellegi &amp; Sunter 1969 (#42); Newcombe et al. 1959.</p>
+      <p class="fm"><b>If it’s wrong:</b> The clerk’s false-person mystery needs a different engine.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">N3</span>NAD 83 arrived after your window <span class="conf">High</span> <span class="fix">corrected</span></p>
+      <p class="fd">The NAD 27 to NAD 83 readjustment came in 1986 and moved positions by roughly 10 to 100 meters across the US. Any datum change inside 1962-82 has to be your city’s own.</p>
+      <p class="fm"><b>How sure:</b> The National Geodetic Survey’s own documentation, and a search on Oct. 5 agreed.</p>
+      <p class="fm"><b>Check first:</b> Dewhurst 1990, NADCON (NGS, free PDF) <span class="url">ngs.noaa.gov/PUBS_LIB/NGS50.pdf</span> · NADCON readme (NGS) <span class="url">ngs.noaa.gov/PC_PROD/NADCON/Readme.htm</span>. <b>Then:</b> Dewhurst 1990 (#36).</p>
+      <p class="fm"><b>If it’s wrong:</b> Using NAD 83 inside your window would be an anachronism.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Lift (elevator)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">L1</span>Paternosters moved more people, and safety stopped them <span class="conf">High</span></p>
+      <p class="fd">In a 2008 survey at Sheffield’s Arts Tower, the paternoster moved 60 people per 5 minutes against 40 for the building’s conventional lifts. A 1970 death in Newcastle led UK paternosters to add car-stability tracking, and new ones are effectively no longer built.</p>
+      <p class="fm"><b>How sure:</b> This is the one source in the corpus I read in full, and it’s free.</p>
+      <p class="fm"><b>Check first:</b> Bottomley 2014 (free PDF) <span class="url">liftescalatorlibrary.org/…</span>. <b>Then:</b> Same paper (#43).</p>
+      <p class="fm"><b>If it’s wrong:</b> The fork’s numbers change.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">L2</span>Riders can stay on through the turnover <span class="conf">High</span></p>
+      <p class="fd">A paternoster car crosses over the top and under the bottom of its loop and stays upright, so a rider who stays aboard passes through machine space no floor plan shows.</p>
+      <p class="fm"><b>How sure:</b> Widely described by riders and lift engineers. I haven’t confirmed it in these 2 sources.</p>
+      <p class="fm"><b>Check first:</b> The Paternoster: A Requiem (Granta) <span class="url">granta.com/paternoster-a-requiem</span> · Bottomley 2014 (free PDF) <span class="url">liftescalatorlibrary.org/…</span>. <b>Then:</b> Bottomley 2014 (#43).</p>
+      <p class="fm"><b>If it’s wrong:</b> The “reaches places no log records” mechanism fails.</p>
+    </div>
+  </div>
+  <h3 class="fsec">Cold Room (refrigerator)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">R1</span>Ethylene ripens everything nearby <span class="conf">High</span></p>
+      <p class="fd">Ripening fruit gives off ethylene, and tiny amounts, well under 1 part per million, set off ripening in nearby fruit. Labs could measure it at those levels by the early 1960s.</p>
+      <p class="fm"><b>How sure:</b> A classic finding, and the 1962 paper is free on PubMed Central.</p>
+      <p class="fm"><b>Check first:</b> Burg &amp; Burg 1962 (PubMed Central, free) <span class="url">pmc.ncbi.nlm.nih.gov/articles/PMC549760</span>. <b>Then:</b> Same paper (#31); Burg &amp; Stolwijk 1959 (#33).</p>
+      <p class="fm"><b>If it’s wrong:</b> Your fast-aging mechanism needs replacing.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">R2</span>Low oxygen and high carbon dioxide slow ripening <span class="conf">High</span></p>
+      <p class="fd">Kidd and West showed in the 1920s that raising carbon dioxide and lowering oxygen slows ripening. England’s first commercial “gas storage” for apples opened in 1929.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on the dates.</p>
+      <p class="fm"><b>Check first:</b> Controlled atmosphere (Wikipedia) <span class="url">en.wikipedia.org/wiki/Controlled_atmosphere</span>. <b>Then:</b> Kidd &amp; West 1930.</p>
+      <p class="fm"><b>If it’s wrong:</b> Your slow-aging mechanism needs replacing.</p>
+    </div>
+  </div>
+  <div class="fact conf-medium">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">R3</span>Temperature can do more than I first said <span class="conf">Medium</span> <span class="fix">corrected</span></p>
+      <p class="fd">Chemical quality loss speeds up about 2 to 3 times per 10°C. Microbial spoilage near fridge temperatures is more sensitive, often 4 to 10 times per 10°C, so a cold room drifting from 1°C to 8°C could spoil food several times faster.</p>
+      <p class="fm"><b>How sure:</b> The corpus said temperature alone couldn’t change spoilage much. A search on Oct. 5 turned up Q10 values of 2 to 10 for refrigerated foods, which fits Ratkowsky’s growth model.</p>
+      <p class="fm"><b>Check first:</b> Ratkowsky et al. 1982, Journal of Bacteriology <span class="url">doi.org/10.1128/jb.149.1.1-5.1982</span>. <b>Then:</b> Labuza 1984 (#32).</p>
+      <p class="fm"><b>If it’s wrong:</b> If temperature can’t do it, you’re back to ethylene or atmosphere.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Exchange (telephone number)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">E1</span>Human operators ran the network at huge scale <span class="conf">High</span></p>
+      <p class="fd">AT&amp;T employed more than 350,000 telephone operators at its peak in the late 1940s, nearly all of them women.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed, citing the IEEE’s history wiki.</p>
+      <p class="fm"><b>Check first:</b> Telephone Operators (IEEE history wiki, free) <span class="url">ethw.org/Telephone_Operators</span>. <b>Then:</b> Lipartito 1994 (#50); Green 2001.</p>
+      <p class="fm"><b>If it’s wrong:</b> An operator-routed 1970s needs a different labor story.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">E2</span>A disconnected line can stay on the wire <span class="conf">High</span></p>
+      <p class="fd">Phone pairs were wired to appear at several terminals along a cable. When a customer disconnected, the pair stayed in place, still wired to every terminal, and unused branches called bridged taps hung off working lines.</p>
+      <p class="fm"><b>How sure:</b> Standard practice in telephone cable plant.</p>
+      <p class="fm"><b>Check first:</b> Bridge tap (Wikipedia) <span class="url">en.wikipedia.org/wiki/Bridge_tap</span>. <b>Then:</b> Reeve 2009 (#52).</p>
+      <p class="fm"><b>If it’s wrong:</b> The ghost subscriber needs a different path onto the network.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">E3</span>Erlang’s math predicts how many operators a load needs <span class="conf">High</span></p>
+      <p class="fd">Erlang’s 1917 formulas turn call traffic into operator and trunk counts, and they were standard tools by mid-century. A shift staffed well above its logged calls points to traffic the logs don’t show.</p>
+      <p class="fm"><b>How sure:</b> The formulas are textbook. The staffing tell is my inference, built on them.</p>
+      <p class="fm"><b>Check first:</b> Erlang (unit) (Wikipedia) <span class="url">en.wikipedia.org/wiki/Erlang_(unit)</span>. <b>Then:</b> Erlang 1917 (#53).</p>
+      <p class="fm"><b>If it’s wrong:</b> The solve needs a different tell.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Meter (parking meter)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">M1</span>The first parking meter <span class="conf">High</span></p>
+      <p class="fd">Oklahoma City installed 175 parking meters on 14 blocks on July 16, 1935, with timing parts from a Tulsa firm that made timers for nitroglycerin oil-well shots.</p>
+      <p class="fm"><b>How sure:</b> From the Oklahoma Historical Society’s encyclopedia.</p>
+      <p class="fm"><b>Check first:</b> Parking Meter (Encyclopedia of Oklahoma History, free) <span class="url">okhistory.org/…</span>. <b>Then:</b> Shoup 2005.</p>
+      <p class="fm"><b>If it’s wrong:</b> Your fork’s date moves.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">M2</span>Robot parking ran in Manhattan from 1929 <span class="conf">High</span> <span class="fix">corrected</span></p>
+      <p class="fd">The Kent Automatic Garage at 43 West 61st Street, built in 1929-30, was a 25-story tower for about 1,000 cars, moved by an electric “parker” that hooked each car’s rear axle. It ran as a garage until 1943.</p>
+      <p class="fm"><b>How sure:</b> The corpus said the Kent garages ran into the early 1960s. This building stopped in 1943, and I haven’t confirmed the company’s other garages.</p>
+      <p class="fm"><b>Check first:</b> Kent Automatic Garages (Wikipedia) <span class="url">en.wikipedia.org/wiki/Kent_Automatic_Garages</span> · New York Times, 2014 (free with an account) <span class="url">nytimes.com/…</span>. <b>Then:</b> Jakle &amp; Sculle 2004.</p>
+      <p class="fm"><b>If it’s wrong:</b> Your vaults lose their real ancestor.</p>
+    </div>
+  </div>
+  <div class="fact conf-medium">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">M3</span>Automated storage moves cars on its own <span class="conf">Medium</span></p>
+      <p class="fd">Automated storage systems shuffle stored items into better positions to speed later retrievals, so a car that never left can log a move every day.</p>
+      <p class="fm"><b>How sure:</b> Shuffling cars through cache spaces is the subject of Li &amp; Miao, which I haven’t read. A 1960s-70s garage doing it is your world’s design.</p>
+      <p class="fm"><b>Check first:</b> Roodbergen &amp; Vis 2009 (Erasmus repository, may have a free copy) <span class="url">repub.eur.nl/pub/13640</span>. <b>Then:</b> Li &amp; Miao 2020 (#49).</p>
+      <p class="fm"><b>If it’s wrong:</b> The 27-year car needs another explanation.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Lock (house key)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">K1</span>One key can reveal the master <span class="conf">High</span></p>
+      <p class="fd">With one legitimate key to a master-keyed system, a few blank keys and a file, you can work out the master key without doing anything suspicious at the lock.</p>
+      <p class="fm"><b>How sure:</b> A well-known security paper, free on the author’s site.</p>
+      <p class="fm"><b>Check first:</b> Blaze 2003 (free PDF) <span class="url">mattblaze.org/papers/mk.pdf</span>. <b>Then:</b> Same paper (#24).</p>
+      <p class="fm"><b>If it’s wrong:</b> The tenant-code mechanism fails.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">K2</span>Air-jet logic boomed in the 1960s <span class="conf">High</span></p>
+      <p class="fd">Engineers at the Army’s Diamond Ordnance Fuze Laboratories, later Harry Diamond Laboratories, built working fluid amplifiers in 1959, and fluidic controls drew heavy industry interest through the 1960s.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed, and the Army’s 1969 survey is free.</p>
+      <p class="fm"><b>Check first:</b> Kirshner 1969, Fluerics 28 (DTIC, free PDF) <span class="url">apps.dtic.mil/sti/trecms/pdf/AD0703117.pdf</span> · Fluidics (Wikipedia) <span class="url">en.wikipedia.org/wiki/Fluidics</span>. <b>Then:</b> Kirshner 1966.</p>
+      <p class="fm"><b>If it’s wrong:</b> Your pneumatic locks need different logic.</p>
+    </div>
+  </div>
+  <div class="fact conf-low">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">K3</span>A pressure surge could flip a fluidic latch <span class="conf">Low</span></p>
+      <p class="fd">Joukowsky’s surge rule applies to air as well as water, and air’s low density keeps surges small. My rough estimate for a city air main is a few psi, which is about where fluidic devices switch. It’s plausible on paper, and I know of no documented case.</p>
+      <p class="fm"><b>How sure:</b> This one is my own inference. Ask a fluid-power engineer, or look in Kirshner 1969 for what upset fluidic circuits.</p>
+      <p class="fm"><b>Check first:</b> Kirshner 1969 (DTIC, free PDF) <span class="url">apps.dtic.mil/sti/trecms/pdf/AD0703117.pdf</span>. <b>Then:</b> Walters &amp; Leishear 2018 (#25) covers water hammer only.</p>
+      <p class="fm"><b>If it’s wrong:</b> The phantom entry needs another cause, like the building’s service side.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Hydrant (fire hydrant)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">H1</span>San Francisco built a separate fire-water system <span class="conf">High</span></p>
+      <p class="fd">After the 1906 earthquake and fire, San Francisco built its Auxiliary Water Supply System from 1909 to 1913: high-pressure mains, a reservoir, pump stations that can draw bay water, cisterns, fireboats and its own oversized hydrants.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed.</p>
+      <p class="fm"><b>Check first:</b> SF Auxiliary Water Supply System (Wikipedia) <span class="url">en.wikipedia.org/…</span> · Museum of the City of San Francisco <span class="url">sfmuseum.org/quake/awss2.html</span>. <b>Then:</b> Scawthorn et al. 2006 (#18).</p>
+      <p class="fm"><b>If it’s wrong:</b> Your district fire mains lose their real model.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">H2</span>Isotopes tell canal water from groundwater <span class="conf">High</span></p>
+      <p class="fd">Rain and snow plot along Craig’s 1961 meteoric water line. Evaporated water, like a canal or reservoir, plots below it, so a 1970s lab could tell surface water from groundwater.</p>
+      <p class="fm"><b>How sure:</b> Textbook isotope hydrology, and USGS explains it for free.</p>
+      <p class="fm"><b>Check first:</b> USGS Isotope Tracers: hydrogen <span class="url">wwwrcamnl.wr.usgs.gov/isoig/period/h_iig.html</span>. <b>Then:</b> Craig 1961 (#20).</p>
+      <p class="fm"><b>If it’s wrong:</b> The hydrant’s water can’t be fingerprinted.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">H3</span>Tritium dates water to before or after 1953 <span class="conf">High</span></p>
+      <p class="fd">Bomb tests from the early 1950s spiked tritium in rain, peaking in 1963-64. Water with almost no tritium fell before 1953, which points to a sealed cistern or a deep aquifer.</p>
+      <p class="fm"><b>How sure:</b> USGS covers it, and labs were measuring tritium in water by the late 1950s.</p>
+      <p class="fm"><b>Check first:</b> Tritium as an indicator of groundwater age (USGS, free) <span class="url">pubs.usgs.gov/publication/sir20195090</span>. <b>Then:</b> Begemann &amp; Libby 1957 (#21).</p>
+      <p class="fm"><b>If it’s wrong:</b> The pre-1953 water clue fails.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Crossing (railroad crossing gate)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">X1</span>Night inversions carry train sound <span class="conf">High</span></p>
+      <p class="fd">At night, cool air near the ground under warmer air bends sound back down, so a distant train can sound close.</p>
+      <p class="fm"><b>How sure:</b> Textbook outdoor acoustics.</p>
+      <p class="fm"><b>Check first:</b> Why sounds travel farther at night (COMSOL) <span class="url">comsol.com/…</span>. <b>Then:</b> Embleton 1996 (#55).</p>
+      <p class="fm"><b>If it’s wrong:</b> The phantom train needs another way to carry.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">X2</span>Trains shake the ground <span class="conf">High</span></p>
+      <p class="fd">Train vibration travels through soil and rock and comes up inside buildings as a low rumble, so a covered line can be heard where nothing shows on the surface.</p>
+      <p class="fm"><b>How sure:</b> The federal transit noise manual covers ground-borne vibration and noise.</p>
+      <p class="fm"><b>Check first:</b> FTA Transit Noise and Vibration Impact Assessment Manual, 2018 (free PDF) <span class="url">transit.dot.gov/…</span>. <b>Then:</b> Colaço et al. 2025 (#56, also free).</p>
+      <p class="fm"><b>If it’s wrong:</b> The buried line can’t be heard.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">X3</span>A 1970s investigator could see sound <span class="conf">High</span></p>
+      <p class="fd">Bell Labs published the sound spectrograph in 1946, and Kay Electric sold its Sona-Graph from 1951, so a 1970s investigator could turn a recording into a picture of frequency over time.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on both dates.</p>
+      <p class="fm"><b>Check first:</b> Sound spectrograph (museum record) <span class="url">chsi.emuseum.com/…</span>. <b>Then:</b> Koenig et al. 1946 (#58).</p>
+      <p class="fm"><b>If it’s wrong:</b> The solve needs a different instrument.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The Dial (thermostat)</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">D1</span>Heat pipes hold temperature with no power <span class="conf">High</span></p>
+      <p class="fd">George Grover built the modern heat pipe at Los Alamos in 1963 and published it in 1964. NASA developed gas-loaded variable-conductance versions that hold a set temperature on their own, and published their theory and design in a 1972 report.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on Grover and NASA’s role, and the 1972 NASA report is free.</p>
+      <p class="fm"><b>Check first:</b> Heat pipe (Wikipedia) <span class="url">en.wikipedia.org/wiki/Heat_pipe</span> · Marcus 1972, NASA CR-2018 (free) <span class="url">ui.adsabs.harvard.edu/…</span>. <b>Then:</b> Grover et al. 1964 (#29).</p>
+      <p class="fm"><b>If it’s wrong:</b> The sealed apartment needs another regulator.</p>
+    </div>
+  </div>
+  <div class="fact conf-medium">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">D2</span>A melting mass can pin a room’s temperature <span class="conf">Medium</span></p>
+      <p class="fd">Phase-change materials soak up and release heat at a fixed melting point. Maria Telkes patented building systems using them in the 1960s, and a 1970s Dow Chemical study screened about 20,000 candidates. Her favorite, Glauber’s salt, melts near 32°C (90°F), so holding 68°F takes a different material.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on Telkes and the Dow study. I haven’t confirmed which material melting near 20°C (68°F) the period would have used.</p>
+      <p class="fm"><b>Check first:</b> Phase-change material (Wikipedia) <span class="url">en.wikipedia.org/wiki/Phase-change_material</span>. <b>Then:</b> Zalba et al. 2003; Telkes 1980.</p>
+      <p class="fm"><b>If it’s wrong:</b> Use the heat pipe alone, or let the room sit warmer.</p>
+    </div>
+  </div>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">D3</span>Your 68°F has a date <span class="conf">High</span></p>
+      <p class="fd">On November 7, 1973, Nixon asked Americans to turn thermostats down at least 6 degrees for a national daytime average of 68°F.</p>
+      <p class="fm"><b>How sure:</b> The primary source is free.</p>
+      <p class="fm"><b>Check first:</b> Nixon’s address (American Presidency Project) <span class="url">presidency.ucsb.edu/…</span>. <b>Then:</b> None needed.</p>
+      <p class="fm"><b>If it’s wrong:</b> The date anchor moves.</p>
+    </div>
+  </div>
+  <h3 class="fsec">The investigators' toolkit</h3>
+  <div class="fact conf-high">
+    <div class="tick"></div>
+    <div class="fbody">
+      <p class="ft"><span class="fid">T1</span>What your investigators can’t use yet <span class="conf">High</span></p>
+      <p class="fd">DNA fingerprinting arrived in 1985, US cellular service in October 1983 and civilian GPS in the 1990s. Desktop computers were rare in city offices before the IBM PC of 1981.</p>
+      <p class="fm"><b>How sure:</b> A search on Oct. 5 agreed on the DNA and cellular dates. The computer line is my judgment.</p>
+      <p class="fm"><b>Check first:</b> Alec Jeffreys (Wikipedia) <span class="url">en.wikipedia.org/wiki/Alec_Jeffreys</span> · Ameritech Cellular (Wikipedia) <span class="url">en.wikipedia.org/wiki/Ameritech_Cellular</span>. <b>Then:</b> Jeffreys et al. 1985.</p>
+      <p class="fm"><b>If it’s wrong:</b> A solve that uses any of these breaks the period.</p>
+    </div>
+  </div>
+</section>
+<!-- facts:end -->
+
+<!-- 4. For the library -->
+<section class="page">
+  <p class="kicker">For the library</p>
+  <h2>Library requests</h2>
+  <p>Interlibrary loan can get any of these. Ask for each one by its DOI or full citation.</p>
+  <h3>The 2 held readings</h3>
+  <div class="cites">
+    <p>Jia, Jimmy Y., and Jason Crabtree. 2015. “The International Niagara Commission of 1891.” In <cite>Driven by Demand: How Energy Gets Its Power</cite>, 93-108. Cambridge University Press. doi:10.1017/CBO9781316221778.005.</p>
+    <p>Pierce, Morris A. 1995. “The Road to Lockport: Historical Background of District Heating and Cooling.” <cite>ASHRAE Transactions</cite> 101 (1). OSTI 87450.</p>
+  </div>
+  <h3>Behind the facts I’m least sure of</h3>
+  <div class="cites">
+    <p>Labuza, T. P. 1984. “Application of Chemical Kinetics to Deterioration of Foods.” <cite>Journal of Chemical Education</cite> 61 (4): 348. doi:10.1021/ed061p348. <span class="for">For R3</span></p>
+    <p>Li, Zhongkai, and Lei Miao. 2020. “Automated Stereo-Garage with Multiple Cache Parking Spaces: Structure, System and Scheduling Performance.” <cite>Automation in Construction</cite> 119: 103377. doi:10.1016/j.autcon.2020.103377. <span class="for">For M3</span></p>
+    <p>Ratkowsky, D. A., J. Olley, T. A. McMeekin and A. Ball. 1982. “Relationship Between Temperature and Growth Rate of Bacterial Cultures.” <cite>Journal of Bacteriology</cite> 149 (1): 1-5. doi:10.1128/jb.149.1.1-5.1982. <span class="for">For R3</span></p>
+    <p>Rogers, Chris, P. E. Grattan-Bellew, R. Doug Hooton, J. Ryell and M. D. A. Thomas. 2000. “Alkali-Aggregate Reactions in Ontario.” <cite>Canadian Journal of Civil Engineering</cite> 27 (2): 246-260. doi:10.1139/l99-073. <span class="for">For I3</span></p>
+    <p>Zalba, Belén, José M. Marín, Luisa F. Cabeza and Harald Mehling. 2003. “Review on Thermal Energy Storage with Phase Change: Materials, Heat Transfer Analysis and Applications.” <cite>Applied Thermal Engineering</cite> 23 (3): 251-283. doi:10.1016/S1359-4311(02)00192-8. <span class="for">For D2</span></p>
+  </div>
+  <h3>Two that need a person</h3>
+  <p>I4 needs the New York State Canal Corporation or a local surveyor for the Barge Canal datum’s offset. K3 needs a fluid-power engineer, or a look through the free Kirshner 1969 survey.</p>
+  <p class="sources">All 158 sources, with notes: <b>story-research/01-science-corpus.md</b> and <b>corpus.bib</b> in the Orchestration repo.</p>
+</section>
+
+<!-- Held until the library delivers: guide sheets for Pierce 1995 and Jia & Crabtree 2015.
+     A template element never renders. Move these sections back into the body to print them. -->
+<template id="held-guides">
 <section class="page">
   <p class="kicker">Reading 3 · Wednesday · #12 in the reading order</p>
   <h2>The city</h2>
@@ -336,7 +731,6 @@ ol.spine .lbl { font-family: var(--sans); font-weight: 700; font-size: 10pt; }
   <div class="lines" data-n="4"></div>
 </section>
 
-<!-- 6. Reading 4 -->
 <section class="page">
   <p class="kicker">Reading 4 · Thursday · #14 in the reading order</p>
   <h2>The power fork</h2>
@@ -381,134 +775,7 @@ ol.spine .lbl { font-family: var(--sans); font-weight: 700; font-size: 10pt; }
   <div class="lines" data-n="4"></div>
 </section>
 
-<!-- 7. The 3 ideas -->
-<section class="page">
-  <p class="kicker">Friday · the other 56</p>
-  <h2>The 3 key ideas from the other 56</h2>
-  <p class="ideas-intro">The 4 readings give you the engine, the thesis and the city. The other 56 sources in the reading order add up to 3 ideas, one each for layers 2, 3 and 4 of your engine. Every one of the 56 sits under exactly one idea. Here they are at a glance, then one page each. Numbers like #30 point to the reading order.</p>
-
-  <div class="glance">
-    <div class="card">
-      <div class="cn">1</div>
-      <div>
-        <p class="kicker">Layer 2 · the fork · 17 sources</p>
-        <h4>The losing design worked</h4>
-        <p>Every fork in the collection was a live contest between working machines. Money, institutions and accidents settled it.</p>
-        <p class="rule"><span>Playbook rule</span> Working loser, smallest rewrite.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="cn">2</div>
-      <div>
-        <p class="kicker">Layer 3 · the accumulated world · 10 sources</p>
-        <h4>The fork sinks into the walls</h4>
-        <p>Once a system wins, institutions grow around it and it drops out of sight, except for the people who keep it running.</p>
-        <p class="rule"><span>Playbook rule</span> Let the paperwork show the fork.</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="cn">3</div>
-      <div>
-        <p class="kicker">Layer 4 · the mystery · 29 sources</p>
-        <h4>The record and the machine drift apart</h4>
-        <p>Most mechanisms in the corpus are a record that disagrees with a physical system. The solve reads the machine with a tool that existed by 1982.</p>
-        <p class="rule"><span>Playbook rule</span> Log versus machine.</p>
-      </div>
-    </div>
-  </div>
-  <h3>Friday notes</h3>
-  <div class="lines" data-n="6"></div>
-</section>
-
-<section class="page idea">
-  <p class="kicker">Idea 1 · Layer 2, the fork</p>
-  <h2>The losing design worked</h2>
-  <p class="lede">Every fork in the collection was a live contest between working machines. Money, institutions and accidents settled it.</p>
-
-  <p>The corpus is full of machines that worked and lost. The quiet gas-absorption fridge lost to the compressor fridge because GE, GM, Westinghouse and the electric utilities had the capital and the motive (#30). Bell kept human operators for decades because they were cheap, flexible and part of the service (#50), and some towns ran 2 unconnected phone networks side by side (#51).</p>
-  <p>Paternosters moved 60 people per 5 minutes against 40 for conventional lifts in a 2008 Sheffield survey, and safety concerns stopped new ones from being built (#43). Kent Automatic Garages parked about 1,000 cars in one Manhattan tower (#46), and San Francisco built separate high-pressure fire mains after 1906 (#18).</p>
-  <p>Air and water did real work. Paris ran its clocks on pulses of air through street mains (#22). A hydraulic air compressor at Ragged Chutes, Ontario, made compressed air from falling water for about 70 years (#16), and fluidic logic built from jets of air boomed through the 1960s (#23).</p>
-  <p>Accident and taste did the deciding. London’s first traffic signal blew up in 1869, and London waited until the 1920s to try again (#34). Engineers wanted whole-building “manufactured weather,” and consumers bought window units (#26). William Love broke ground on a power-canal city in 1894 and lost his investors by 1897, once power could travel (#17).</p>
-  <p>Designs stay open until the argument around them closes (#5). The Niagara argument closed partly on engineers’ cultural assumptions (#15), and small early leads compound (#13). One guardrail: markets do switch when an alternative is clearly better (#4), so a fork survives to 1962 only if the winner was at least good enough. Change as little as possible, then follow the knock-on effects honestly (#6).</p>
-
-  <div class="boxes">
-    <div><h3>Where it shows up</h3><p>Layer 2 of every story. Strongest in Cold Room, The Exchange, The Lift and The Meter, where the losing machine has the best paper trail.</p></div>
-    <div><h3>Playbook rule</h3><p><span class="rule-name">Working loser, smallest rewrite.</span> For each story, write down the historical decision, its year, who made it, and the smallest change that flips it. If our winner was clearly better, pick another fork.</p></div>
-  </div>
-  <p class="sources"><b>From the reading order:</b> #4 Liebowitz &amp; Margolis 1990 · #5 Pinch &amp; Bijker 1984 · #6 Lebow 2000 · #13 Arthur 1989 · #15 Lubar 1989 · #16 Millar 2014 · #17 Newman 2016 · #18 Scawthorn et al. 2006 · #22 Popular Science Monthly 1882 · #23 Kirshner 1969 · #26 Cooper 1998 · #30 Cowan 1985 · #34 McShane 1999 · #43 Bottomley 2014 · #46 New York Times 2014 · #50 Lipartito 1994 · #51 Mueller 1993</p>
-</section>
-
-<section class="page idea">
-  <p class="kicker">Idea 2 · Layer 3, the accumulated world</p>
-  <h2>The fork sinks into the walls</h2>
-  <p class="lede">Once a system wins, institutions grow around it and it drops out of sight, except for the people who keep it running.</p>
-
-  <p>Hughes calls it momentum: big systems gather people, capital and rules until they’re hard to turn (#7). Unruh shows lock-in covers institutions along with hardware: utilities, codes, unions, lenders (#8). Edwards shows mature infrastructure becoming the natural background of modern life (#2).</p>
-  <p>Defaults have birthdays. The national 68°F thermostat target dates to a November 1973 speech (#27). House numbers and city directories were built to make cities readable to government and business (#39). Minimum parking requirements remade American land and street life (#47).</p>
-  <p>Our world eliminated grade crossings case by case over decades (#54). Yours finished the job, so rail above or below every road is simply how a city looks. Blacklock’s essay on riding a paternoster shows how fast a strange machine starts to feel ordinary (#45).</p>
-  <p>Only some people can see the system. A pipe is invisible to a tenant and central to its crew (#9). Russell &amp; Vinsel argue technology history should be told through upkeep (#11). Your investigators come from those crews, and your scratched, stickered look comes from the same place: maintenance is where a system shows.</p>
-
-  <div class="boxes">
-    <div><h3>Where it shows up</h3><p>Layer 3 of every story, and the rule that characters never explain the missing object. Strongest in The Number, The Meter, The Dial and The Crossing.</p></div>
-    <div><h3>Playbook rule</h3><p><span class="rule-name">Let the paperwork show the fork.</span> Give each story one institution that exists only because of the fork (a union local, a code, a utility, a standard) and one default with a birthday. Then cast someone who works on the system as the investigator.</p></div>
-  </div>
-  <p class="sources"><b>From the reading order:</b> #2 Edwards 2003 · #7 Hughes 1969 · #8 Unruh 2000 · #9 Star &amp; Ruhleder 1996 · #11 Russell &amp; Vinsel 2018 · #27 Nixon 1973 · #39 Rose-Redwood 2008 · #45 Blacklock 2020 · #47 Shoup 1999 · #54 Ogden &amp; Cooper 2019 (FHWA)</p>
-</section>
-
-<section class="page idea">
-  <p class="kicker">Idea 3 · Layer 4, the mystery</p>
-  <h2>The record and the machine drift apart</h2>
-  <p class="lede">Most mechanisms in the corpus are a record (a log, a map, a plan) that disagrees with a physical system. The solve reads the machine with a tool that existed by 1982.</p>
-
-  <table class="drift">
-    <tr><th>The record says</th><th>The machine does</th><th></th></tr>
-    <tr><td>The survey closes</td><td>Two datums put the same point in 2 places</td><td class="num">#36</td></tr>
-    <tr><td>This address exists</td><td>Broken coordinates collapse to (0, 0) and become a place</td><td class="num">#40</td></tr>
-    <tr><td>The house is here</td><td>Address matching lands it tens of meters off</td><td class="num">#41</td></tr>
-    <tr><td>These records are one person</td><td>A false match invented them</td><td class="num">#42</td></tr>
-    <tr><td>Everyone who entered left</td><td>The count was taken by flow at one landing</td><td class="num">#44</td></tr>
-    <tr><td>The car hasn’t moved in 27 years</td><td>The garage shuffles it to speed retrieval</td><td class="num">#48, #49</td></tr>
-    <tr><td>The line is disconnected</td><td>A bridged tap keeps it on the wire</td><td class="num">#52</td></tr>
-    <tr><td>The shift was quiet</td><td>It was staffed for calls the logs don’t show</td><td class="num">#53</td></tr>
-    <tr><td>The valve is closed</td><td>It sits open and joins 2 pressure zones</td><td class="num">#19</td></tr>
-    <tr><td>Someone came in</td><td>A pressure spike flipped the latch</td><td class="num">#25</td></tr>
-    <tr><td>Only the master opens every door</td><td>One tenant’s key reveals the master</td><td class="num">#24</td></tr>
-  </table>
-
-  <p>Physics supplies the rest. A weave puts crashes where the plan shows none (#35), and ethylene ripens a whole shared cold store (#31). Night inversions carry a train’s sound, and rock carries its rumble (#55, #56). A heat pipe holds a set point with no power (#29), and any steady temperature implies a governor somewhere (#28).</p>
-  <p>Period tools settle it: water isotopes (#20), bomb tritium (#21), the sound spectrograph (#58), an ethylene detector (#33), Baker’s crash manual (#38) and the Hardy Cross method (#19). Two traps keep it honest. Niagara dolostone doesn’t swell in concrete (#37), and temperature alone speeds decay only 2 to 3 times per 10°C (#32).</p>
-  <p>And the answer is often a system. The famous story about Robert Moses’s low bridges turns out to be mostly legend (#10), and the Windsor Hum came from blast furnaces across a border (#57). That’s your precedent for endings with no culprit.</p>
-
-  <div class="boxes">
-    <div><h3>Where it shows up</h3><p>Layer 4 of every story. The record gap carries The Number, The Meter, The Lift, The Exchange and The Lock. Physical traces carry The Hydrant, The Crossing, Cold Room and The Dial. The Intersection gets both.</p></div>
-    <div><h3>Playbook rule</h3><p><span class="rule-name">Log versus machine.</span> Write each mystery as a disagreement between a record and a physical system. The investigator wins by reading the machine with a tool from 1982 or earlier.</p></div>
-  </div>
-  <p class="sources"><b>From the reading order:</b> #10 Winner 1980 and Joerges 1999 · #19 Cross 1936 · #20 Craig 1961 · #21 Begemann &amp; Libby 1957 · #24 Blaze 2003 · #25 Walters &amp; Leishear 2018 · #28 Maxwell 1868 · #29 Grover et al. 1964 and Marcus 1972 · #31 Burg &amp; Burg 1962 · #32 Labuza 1984 · #33 Burg &amp; Stolwijk 1959 · #35 Pulugurtha &amp; Bhatt 2010 · #36 Dewhurst 1990 · #37 Rogers et al. 2000 · #38 Baker 1975 · #40 Juhász &amp; Mooney 2022 · #41 Zandbergen 2008 · #42 Fellegi &amp; Sunter 1969 · #44 Fruin 1974 · #48 Roodbergen &amp; Vis 2009 · #49 Li &amp; Miao 2020 · #52 Reeve 2009 · #53 Erlang 1917 · #55 Embleton 1996 · #56 Colaço et al. 2025 · #57 Windsor Hum study 2014 · #58 Koenig et al. 1946</p>
-</section>
-
-<!-- 8. Close -->
-<section class="page">
-  <p class="kicker">After Friday</p>
-  <h2>Put together</h2>
-  <p>The 3 ideas give each story a spine you can check in 3 lines.</p>
-  <ol class="spine">
-    <li><span class="lbl">The fork</span><span>A working loser, and the smallest rewrite that flips it.</span></li>
-    <li><span class="lbl">The world</span><span>One institution and one default that exist only because of the fork.</span></li>
-    <li><span class="lbl">The mystery</span><span>A record that disagrees with the machine, and a tool from 1982 or earlier that settles it.</span></li>
-  </ol>
-  <p>We’re lucky the history is this rich. Almost every fork you want has a working loser waiting in the archive, with dates, prices and names attached.</p>
-  <p>One caution. The corpus can carry a lot of weight, so let it carry the fairness of the ending and keep it out of the dialogue. If a scene needs the reader to understand the physics, the physics is doing a character’s job.</p>
-  <p><b>Next week:</b> #2, #4, #5 and #6 from the reading order, the next 4 on the spine. Then pick the story you’ll draft first and read its block.</p>
-
-  <h3>This week’s citations, for library requests</h3>
-  <div class="cites">
-    <p>David, Paul A. 1985. “Clio and the Economics of QWERTY.” <cite>American Economic Review</cite> 75 (2): 332-337. JSTOR 1805621.</p>
-    <p>Jia, Jimmy Y., and Jason Crabtree. 2015. “The International Niagara Commission of 1891.” In <cite>Driven by Demand: How Energy Gets Its Power</cite>, 93-108. Cambridge University Press. doi:10.1017/CBO9781316221778.005.</p>
-    <p>Pierce, Morris A. 1995. “The Road to Lockport: Historical Background of District Heating and Cooling.” <cite>ASHRAE Transactions</cite> 101 (1). OSTI 87450.</p>
-    <p>Star, Susan Leigh. 1999. “The Ethnography of Infrastructure.” <cite>American Behavioral Scientist</cite> 43 (3): 377-391. doi:10.1177/00027649921955326.</p>
-  </div>
-  <p class="sources">All 158 sources, with notes: <b>story-research/01-science-corpus.md</b> and <b>corpus.bib</b> in the Orchestration repo.</p>
-</section>
+</template>
 
 <script>
 document.querySelectorAll('.lines').forEach(function (d) {
